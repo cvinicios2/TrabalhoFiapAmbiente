@@ -1,0 +1,12 @@
+camel:
+  component:
+    rabbitmq: 
+      addresses: localhost:5672
+      username: guest
+      password: guest
+route:
+  fiap:
+    input:
+      endpoint: rabbitmq:fiap.scp.input.exchange?queue=fiap.scp.input.fila
+    output:
+      endpoint: rabbitmq:fiap.scp.output.exchange?queue=fiap.scp.output.fila
